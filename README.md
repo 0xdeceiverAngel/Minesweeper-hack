@@ -57,6 +57,6 @@ PS. If your first step were on mine,that mine will change it position
 height 24 ,width 30,mines 667
 
 
-![](https://raw.githubusercontent.com/0xdeciverAngel/Minesweeper-hack/main/demo.jpg)
+![](https://raw.githubusercontent.com/0xdeciverAngel/Minesweeper-hack/main/demo.png)
 
 

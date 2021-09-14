@@ -23,11 +23,11 @@ int main(){
 	ReadProcessMemory(hProcess,(LPVOID)mine_addr,pbyte,size,0);
 	
 	DWORD info=0x1005330,h=0,w=0;
-	ReadProcessMemory(hProcess,(LPVOID)info,&w,sizeof(DWORD),0);
-	ReadProcessMemory(hProcess,(LPVOID)info,&h,sizeof(DWORD),0);
-	w++;
+	ReadProcessMemory(hProcess,(LPVOID)(info+4),&w,sizeof(DWORD),0);
+	ReadProcessMemory(hProcess,(LPVOID)(info+8),&h,sizeof(DWORD),0);
+	w+=2;h++;
 	
-	cout<<h<<" "<<w<<endl;
+	cout<<endl<<"size:"<<h<<" "<<w<<endl;
 	int k=0;
 	int t=0;
 	PBYTE ptmp=(PBYTE)malloc(h*w);
@@ -60,6 +60,12 @@ int main(){
 			
 			x1=i%(w);
 			y1=i/(w);
+			
+//			
+//			if(y1>h){
+//				break;
+//			}
+//			cout<<y1<<" "<<h<<endl;
 			x=x1*16;
 			y=y1*16+61;
 //			cout<<(int)pbyte[i]<<" "<<x1<<" "<<y1<<" "<<x<<" "<<y<<" "<<endl; 

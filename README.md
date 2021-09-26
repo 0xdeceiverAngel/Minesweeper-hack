@@ -15,6 +15,7 @@ MD5 9c45d38b74634c9ded60bec640c5c3ca
 SHA-1 79d03b17ce9e7ff9595253a402efb856b0888ea0
 
 ## Detail
+Break point on `Bitblt`,found it will render to small cell for each mine space,look more futher in asm,`ebx` may store the adderss of mine map
 
 ![](https://raw.githubusercontent.com/0xdeciverAngel/Minesweeper-hack/main/bitblt.png)
 
@@ -24,9 +25,11 @@ SHA-1 79d03b17ce9e7ff9595253a402efb856b0888ea0
 
 mine position were save at 0x01005360，offset -0x20 were border,so I skip it
 
+```
 0x0F is empty space
-0x8F is Mine
+0x8F is mine
 0x10 is border
+```
 
 every 32 byte were a row
 
@@ -48,6 +51,8 @@ max size height 24 ,width 30
 
 
 PS. If your first step were on mine,that mine will change it position
+
+Write some code dump the memory out,use windows api to click the cell
 
 
 
